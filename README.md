@@ -14,4 +14,11 @@ detailed notes in the source code itself as comments.
 * rustup: version manager for rust
 * rustc: compiler
 * cargo: rust's build system and package manager
-    * cargo ; new, build (--release), run, check
+    * cargo ; new, build (--release), run, check, update, doc --open
+
+## Ch 2: First program, a guessing game
+
+* *prelude*: items in std library in scope for every program
+
+## Ch 3: Basics
+
