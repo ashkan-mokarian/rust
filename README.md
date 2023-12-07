@@ -20,5 +20,48 @@ detailed notes in the source code itself as comments.
 
 * *prelude*: items in std library in scope for every program
 
-## Ch 3: Basics
+## Ch 3: Concepts
 
+* mut, const
+* i8, u8, i16, u16, ..., u128, isize, usize, f64(default), f32, bool,
+char(4 Bytes)
+* compound types; tuple(cannot be resized) x: (f64, u8) = (6.1, 2); unit (shown
+with ()), when expressions don't return anything; array(fixed length, same type)
+`let a: (i32; 5) = [1, 2, 3, 4, 5]`;
+* define return type of a function with `->`. Functions implecitly return the
+last expression, but one can also use return.
+
+### Statement and Expression
+*Statement*: instruction that does not return a value. e.g. `let x = 1;`
+
+**Expression**: Evaluates to a resultant value. e.g.
+```Rust
+let x = {
+    let x = 3;
+    x + 1 // note there is no semicolon here, because it is an Expression.
+};
+```
+
+* in Rust, loops can return values.
+```Rust
+let result = loop {
+    counter += 1;
+    if counter == 10 {
+        break counter * 2;
+    }
+};
+```
+
+* Can also label loops (with single quotes).
+```rust
+'counting_up': loop {
+    let mut remaining = 10;
+    if remaining == 9 {
+        break;
+    }
+    if remaining == 2 {
+        break 'counting_up';
+    }
+    remaining -= 1
+}
+```
